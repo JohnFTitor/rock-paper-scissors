@@ -1,1 +1,1 @@
-14/07/2021: Starting the project. Setting up the basics.
+14/07/2021: Starting the project. Setting up the basics. After a while, all the logic of the game was set in Javascript, now all that's left is to set the structure and apperance of the page. 
