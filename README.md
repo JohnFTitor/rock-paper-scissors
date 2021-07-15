@@ -1,1 +1,1 @@
-14/07/2021: Starting the project. Setting up the basics. After a while, all the logic of the game was set in Javascript, now all that's left is to set the structure and apperance of the page. 
+14/07/2021: Starting the project. Setting up the basics. All the logic of the game was set, crwating a function for the computerSelection, one for the round, one to check whether the player entry is indeed rock, paper or scissors and one for tha game, that plays 5 rounds and declares a winner.

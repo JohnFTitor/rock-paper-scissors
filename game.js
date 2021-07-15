@@ -8,11 +8,11 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     console.log("Computer Play: " + computerSelection);
     switch (playerSelection) {
+        case computerSelection: 
+            console.log("It's a tie")
+            return "tie";
         case "rock":
-            if (computerSelection === "rock"){
-                console.log("It's a tie");
-                return "tie";
-            } else if (computerSelection === 'scissors') {
+            if (computerSelection === 'scissors') {
                 console.log("You won! Rock beats Scissors");
                 return "player";
             } else {
@@ -20,10 +20,7 @@ function playRound(playerSelection, computerSelection) {
                 return "computer";
             }
         case "paper":
-            if (computerSelection === "paper"){
-                console.log("It's a tie");                
-                return "tie";
-            } else if (computerSelection === "scissors") {
+            if (computerSelection === "scissors") {
                 console.log("You lost. Scissors beats Paper");
                 return "computer";
             } else {
@@ -31,10 +28,7 @@ function playRound(playerSelection, computerSelection) {
                 return "player";
             }
         case "scissors":
-            if (computerSelection === "scissors"){
-                console.log("It's a tie")
-                return "tie";
-            } else if (computerSelection === "rock") {
+            if (computerSelection === "rock") {
                 console.log("You lost. Rock beats Scissors")
                 return "computer";
             } else {
