@@ -1,10 +1,41 @@
 <html>
-    <script src="game.js"></script>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <body>
         <h1 id="header" class= "elements">Rock Paper Scissors!</h1>
-        <label for="startButton" class= "elements"> Ready? </label>
-        <button id="startButton" class= "elements"> Start </button>
+        <div id="home" class= "container">
+            <label id= "startButtonLabel" for= "startButton" class= "elements"> Ready? </label>
+            <button type= "button" id="startButton" class= "elements"> Start </button>
+        </div>
+        <div id="gameMode" class= "container">
+            <p class="elements"> Pick a weapon </p>
+            <div id= "selections" class="secondContainer"> 
+                <button type="button" id="rock" class= "elements"> Rock </button>
+                <button type="button" id="paper" class= "elements"> Paper </button>
+                <button type="button" id="scissors" class= "elements"> Scissors </button>
+            </div>
+            <p class="elements"> Enemy's Selection </p>
+            <div id="computerSelection" class= "elements">        
+            </div>
+            <div id="showTable" class= "secondContainer"> 
+                <div class= "container">
+                    <p class= "elements"> Message </p>
+                    <p id= "message" class= "elements results"> Something beats something </p>
+                </div>
+                <div class= "container">
+                    <p class= "elements"> Score </p>
+                    <div id= "score">
+                        <p class= "elements results"> You: </p>
+                        <p class= "elements results"> Machine: </p>
+                    </div>
+                </div>
+                <div class= "container"> 
+                    <p class= "elements"> Round </p>
+                    <p class= "elements results"> 0 </p>
+                </div>
+            </div>        
+        </div>
     </body>
+    <script src="game.js"></script>
 </html>
+

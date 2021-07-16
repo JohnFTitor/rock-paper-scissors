@@ -14,6 +14,19 @@ body {
     background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(166,166,166,1) 32%, rgba(84,124,184,1) 65%, rgba(61,96,124,1) 100%, rgba(48,60,105,1) 100%);
 }
 
+
+#home {
+    display: none;
+}
+
+.container{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 p,label {
     color: rgb(0, 0, 0);
     font-size: 3rem;
@@ -43,5 +56,37 @@ button:hover {
     margin-top: 6rem;
     font-family: 'Lato', 'sans-serif';
     font-size: 6rem;     
+}
+
+.secondContainer{
+    width: 60rem;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+#computerSelection {
+    display: block;
+    background-color: black;
+    width: 20rem;
+    height: 20rem;
+}
+
+.results {
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    font-size: 2.3rem;
+}
+
+#showTable {
+    width: 80rem;
+    align-items: flex-start;
+}
+
+#score {
+    text-align: left;
 }
 
