@@ -1,4 +1,3 @@
-const selections = ["rock", "paper", "scissors"];    
 
 //returns one out of the three options of the game using random
 function computerPlay() {
@@ -41,56 +40,90 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//EntryMode game, this function makes sure the player only enters a valid
-//selection and returns the selection lowercased.
-function selection() {
-    let checked = false;
-    let playerSelection = '';
-    while (!checked) {
-        playerSelection = prompt("What do you choose?").toLowerCase();
-        checked = selections.includes(playerSelection);
-    }
-    return playerSelection;    
-}
 
 //Creates a gameSet of five rounds and declares the winner of the match.
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = selection();
-        alert("Player Selection: " + playerSelection);
-        winner = playRound(playerSelection, computerPlay());
-        if (winner === "player") {
-            playerScore += 1;
-        } else if (winner === "computer") {
-            computerScore += 1;
-        }
-        //whenever one of them gets 3 victories, the game is finished.
-        if (playerScore === 3 || computerScore === 3) {
-            break;
-        }
+function check() {
+    //Adding game score
+    if (winner === "player") {
+        playerScore += 1;
+    } else if (winner === "computer") {
+        computerScore += 1;
+    } 
+    
+    if (playerScore === 3 || computerScore === 3) {
+        rounds = 5;
     }
-    if (playerScore > computerScore) {
-        alert("Player won! Score: " + playerScore);
-    } else if (playerScore === computerScore) {
-        alert("It's a tie. What a shame");    
-    } else {
-        alert("Computer won. Score: " + computerScore);
+
+    if (rounds === 5){
+        if (playerScore > computerScore) {
+            alert("Player won! Score: " + playerScore);
+        } else if (playerScore === computerScore) {
+            alert("It's a tie. What a shame");    
+        } else {
+            alert("Computer won. Score: " + computerScore);
+        }
+        toggleView();  
     }
 }
 
-
-//Changes the view when start button pressed, entering the game
+//Changes the view depending on the current state. Home or Game mode.
 function toggleView() {
-    if (home.style.display === "") {
+    if (home.style.display === "" || home.style.display === "flex") {
         home.style.display= "none";
-    }
+        gameMode.style.display = "flex";
+        rounds = 0;
+        playerScore = 0;
+        computerScore = 0;
+    } else {
+        home.style.display = "flex";
+        gameMode.style.display = "none";
+    } 
 } 
 
+//Assign variables for the game
 
+const selections = ["rock", "paper", "scissors"]; 
+let playerScore = 0;
+let computerScore = 0;
+let rounds = 0;
+let winner;
+
+
+//Assign constants for the respected id
 const home = document.getElementById("home");
+const gameMode = document.getElementById("gameMode");
 const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", toggleView);
+
+//Assign the buttons to constants
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper"); 
+const scissors = document.getElementById("scissors");
+
+//Creates eventListeners
+
+rock.addEventListener("click", function(){
+    let playerSelection = "rock";
+    alert("Player Selection: " + playerSelection);
+    winner = playRound(playerSelection, computerPlay());
+    rounds++;
+    check();
+})
+paper.addEventListener("click", function(){
+    let playerSelection = "paper";
+    alert("Player Selection: " + playerSelection);
+    winner = playRound(playerSelection, computerPlay());
+    rounds++;
+    check();
+})
+scissors.addEventListener("click", function(){
+    let playerSelection = "scissors";
+    alert("Player Selection: " + playerSelection);
+    winner = playRound(playerSelection, computerPlay());
+    rounds++;
+    check();
+})
+
+  
 
 

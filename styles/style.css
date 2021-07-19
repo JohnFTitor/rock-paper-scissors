@@ -14,8 +14,7 @@ body {
     background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(166,166,166,1) 32%, rgba(84,124,184,1) 65%, rgba(61,96,124,1) 100%, rgba(48,60,105,1) 100%);
 }
 
-
-#home {
+#gameMode {
     display: none;
 }
 
