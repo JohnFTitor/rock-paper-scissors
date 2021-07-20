@@ -14,28 +14,32 @@
                 <button type="button" id="paper" class= "elements"> <img class= "gameIcons" src="/images/paper.svg" alt= "Fist by Cristiano Zoucas from the Noun Project"> </button>
                 <button type="button" id="scissors" class= "elements"> <img class= "gameIcons" src="/images/scissors.svg" alt= "Hand by Cristiano Zoucas from the Noun Project"> </button>
             </div>
-            <p class="elements"> Enemy's Selection </p>
-            <div id="computerSelection" class= "elements">
-                <img id= "computerIcon" src="" alt="">        
-            </div>
-            <button type="button" id="finish" class="elements"> Finish </button>  
-            <div id="showTable" class= "secondContainer"> 
-                <div class= "container">
-                    <p class= "elements"> Message </p>
-                    <p id= "message" class= "elements results"> Waiting for results </p>
-                </div>
-                <div class= "container">
-                    <p class= "elements"> Score </p>
-                    <div id= "score">
-                        <p id= "player" class= "elements results"> You: 0</p>
-                        <p id= "machine" class= "elements results"> Machine: 0</p>
+            <div id= "showTable" class="secondContainer">
+                <div id= "computerContainer" class="container">
+                    <p class="elements"> Enemy's Selection </p>
+                    <div id="computerSelection" class= "elements">
+                        <img id= "computerIcon" src="" alt="">        
                     </div>
                 </div>
-                <div class= "container"> 
-                    <p class= "elements"> Round </p>
-                    <p id= "roundsLabel" class= "elements results"> 0 </p>
-                </div>
-            </div>        
+                <div id="showScore" class= "secondContainer"> 
+                    <div class= "container">
+                        <p class= "elements"> Message </p>
+                        <p id= "message" class= "elements results"> Waiting for results </p>
+                    </div>
+                    <div class= "container">
+                        <p class= "elements"> Score </p>
+                        <div id= "score">
+                            <p id= "player" class= "elements results"> You: 0</p>
+                            <p id= "machine" class= "elements results"> Machine: 0</p>
+                        </div>
+                    </div>
+                    <div class= "container"> 
+                        <p class= "elements"> Round </p>
+                        <p id= "roundsLabel" class= "elements results"> 0 </p>
+                    </div>
+                </div>        
+            </div>
+            <button type="button" id="finish" class="elements"> Finish </button>  
         </div>
     </body>
     <script src="game.js"></script>

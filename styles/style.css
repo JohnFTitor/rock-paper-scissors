@@ -94,8 +94,8 @@ button:hover {
     font-size: 2.3rem;
 }
 
-#showTable {
-    width: 80rem;
+#showScore {
+    width: 70rem;
     align-items: flex-start;
 }
 
@@ -118,4 +118,13 @@ button:hover {
 
 #finish {
     display: none;
+}
+
+#showTable {
+    width: 90rem;
+    align-items: center;
+}
+
+#computerContainer {
+    width: auto;
 }
