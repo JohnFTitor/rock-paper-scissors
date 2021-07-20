@@ -11,30 +11,30 @@ function playRound(playerSelection, computerSelection) {
     alert("Computer Play: " + computerSelection);
     switch (playerSelection) {
         case computerSelection: 
-            alert("It's a tie")
+            message.textContent = "It's a tie";
             return "tie";
         case "rock":
             if (computerSelection === 'scissors') {
-                alert("You won! Rock beats Scissors");
+                message.textContent = "You won! Rock beats Scissors";
                 return "player";
             } else {
-                alert("You lost. Paper beats Rock");
+                message.textContent = "You lost. Paper beats Rock";
                 return "computer";
             }
         case "paper":
             if (computerSelection === "scissors") {
-                alert("You lost. Scissors beats Paper");
+                message.textContent = "You lost. Scissors beats Paper";
                 return "computer";
             } else {
-                alert("You won! Paper beats Rock");
+                message.textContent = "You won! Paper beats Rock";
                 return "player";
             }
         case "scissors":
             if (computerSelection === "rock") {
-                alert("You lost. Rock beats Scissors")
+                message.textContent = "You lost. Rock beats Scissors";
                 return "computer";
             } else {
-                alert("You won! Scissors beats Paper")
+                message.textContent = "You won! Scissors beats Paper";
                 return "player";
             }    
     }
@@ -46,8 +46,10 @@ function check() {
     //Adding game score
     if (winner === "player") {
         playerScore += 1;
+        player.textContent = "You: " + playerScore;
     } else if (winner === "computer") {
         computerScore += 1;
+        machine.textContent = "Machine: " + computerScore;
     } 
     
     if (playerScore === 3 || computerScore === 3) {
@@ -66,6 +68,15 @@ function check() {
     }
 }
 
+function game(playerSelection) {
+    alert("Player Selection: " + playerSelection);
+    winner = playRound(playerSelection, computerPlay());
+    rounds++;
+    roundsLabel.textContent = rounds;
+    check();
+}
+
+
 //Changes the view depending on the current state. Home or Game mode.
 function toggleView() {
     if (home.style.display === "" || home.style.display === "flex") {
@@ -74,6 +85,12 @@ function toggleView() {
         rounds = 0;
         playerScore = 0;
         computerScore = 0;
+
+        //Initialize the screen of gameMode
+        player.textContent = "You: " + playerScore;
+        machine.textContent = "Machine: " + computerScore;
+        roundsLabel.textContent = rounds;
+        
     } else {
         home.style.display = "flex";
         gameMode.style.display = "none";
@@ -94,6 +111,11 @@ const home = document.getElementById("home");
 const gameMode = document.getElementById("gameMode");
 const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", toggleView);
+const message = document.getElementById("message");
+const player = document.getElementById("player");
+const machine = document.getElementById("machine");
+const roundsLabel = document.getElementById("roundsLabel");
+
 
 //Assign the buttons to constants
 const rock = document.getElementById("rock");
@@ -104,24 +126,15 @@ const scissors = document.getElementById("scissors");
 
 rock.addEventListener("click", function(){
     let playerSelection = "rock";
-    alert("Player Selection: " + playerSelection);
-    winner = playRound(playerSelection, computerPlay());
-    rounds++;
-    check();
+    game(playerSelection);
 })
 paper.addEventListener("click", function(){
     let playerSelection = "paper";
-    alert("Player Selection: " + playerSelection);
-    winner = playRound(playerSelection, computerPlay());
-    rounds++;
-    check();
+    game(playerSelection);
 })
 scissors.addEventListener("click", function(){
     let playerSelection = "scissors";
-    alert("Player Selection: " + playerSelection);
-    winner = playRound(playerSelection, computerPlay());
-    rounds++;
-    check();
+    game(playerSelection);
 })
 
   
