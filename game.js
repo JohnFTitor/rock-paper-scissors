@@ -8,7 +8,7 @@ function computerPlay() {
 //determines the winner of a single round, comparing playerSelection
 //with computer selection
 function playRound(playerSelection, computerSelection) {
-    alert("Computer Play: " + computerSelection);
+    computerIcon.src = `/images/${computerSelection}.svg`; 
     switch (playerSelection) {
         case computerSelection: 
             message.textContent = "It's a tie";
@@ -69,7 +69,6 @@ function check() {
 }
 
 function game(playerSelection) {
-    alert("Player Selection: " + playerSelection);
     winner = playRound(playerSelection, computerPlay());
     rounds++;
     roundsLabel.textContent = rounds;
@@ -90,7 +89,7 @@ function toggleView() {
         player.textContent = "You: " + playerScore;
         machine.textContent = "Machine: " + computerScore;
         roundsLabel.textContent = rounds;
-        
+
     } else {
         home.style.display = "flex";
         gameMode.style.display = "none";
@@ -115,6 +114,7 @@ const message = document.getElementById("message");
 const player = document.getElementById("player");
 const machine = document.getElementById("machine");
 const roundsLabel = document.getElementById("roundsLabel");
+const computerIcon = document.getElementById("computerIcon");
 
 
 //Assign the buttons to constants

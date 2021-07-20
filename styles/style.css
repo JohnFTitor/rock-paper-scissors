@@ -82,6 +82,7 @@ button:hover {
     width: 20rem;
     height: 20rem;
     border: solid 3px rgb(0, 0, 0);
+    margin-bottom: 20px;
 }
 
 .results {

@@ -7,3 +7,4 @@ Home: First page the user sees, with a start button to begin the game. I started
 GameMode: Contains all the buttons to select rock, paper or scissors, also shows the computer selection, round, score and a message that indicates the state of the round (who won, etc). It is just the structure for now, the next step is to manipulate the logic again to adapt it to the new scenario. 
 
 That's all for today.
+
