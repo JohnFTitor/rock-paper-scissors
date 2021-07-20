@@ -45,8 +45,19 @@ button {
     transition: all linear 0.1s;
 }
 
+#selections button{
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(240, 240, 240);
+    border: solid 3px rgb(0, 0, 0);
+}
+
+#selections button:hover {
+    padding: 13px 33px 13px 33px;
+    background-color: rgb(196, 26, 26, 0.9);
+}
+
 button:hover {
-    background: rgb(77, 2, 107);
+    background: rgb(196, 26, 26, 0.9);;
     cursor: pointer;
     font-size: 2.8rem;
     padding: 17px 43px 17px 43px;
@@ -67,9 +78,10 @@ button:hover {
 
 #computerSelection {
     display: block;
-    background-color: black;
+    background-color: rgb(255, 248, 248);
     width: 20rem;
     height: 20rem;
+    border: solid 3px rgb(0, 0, 0);
 }
 
 .results {
@@ -96,4 +108,9 @@ button:hover {
     justify-content: center;
     width: 30rem;
     height: 4rem;
+}
+
+.gameIcons{
+    width: 80%;
+    height: auto;
 }
