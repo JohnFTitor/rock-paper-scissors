@@ -24,12 +24,16 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 p,label {
     color: rgb(0, 0, 0);
     font-size: 3rem;
+}
+
+h1 {
+    text-align: center;
 }
 
 .elements {
@@ -41,18 +45,18 @@ button {
     color: rgb(255, 255, 255);
     background-color: rgb(25, 25, 25);
     font-size: 2.8rem;
-    padding: 15px 40px 15px 40px;
+    padding: 1.5rem 4rem 1.5rem 4rem;
     transition: all linear 0.1s;
 }
 
 #selections button{
-    padding: 10px 30px 10px 30px;
+    padding: 1rem 3rem 1rem 3rem;
     background-color: rgb(240, 240, 240);
     border: solid 3px rgb(0, 0, 0);
 }
 
 #selections button:hover {
-    padding: 13px 33px 13px 33px;
+    padding: 1.3rem 3.3rem 1.3rem 3.3rem;
     background-color: rgb(196, 26, 26, 0.9);
 }
 
@@ -60,7 +64,7 @@ button:hover {
     background: rgb(196, 26, 26, 0.9);;
     cursor: pointer;
     font-size: 2.8rem;
-    padding: 17px 43px 17px 43px;
+    padding: 1.7rem 4.3rem 1.7rem 4.3rem;
 }
 
 #header {
@@ -82,7 +86,7 @@ button:hover {
     width: 20rem;
     height: 20rem;
     border: solid 3px rgb(0, 0, 0);
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .results {
@@ -127,4 +131,29 @@ button:hover {
 
 #computerContainer {
     width: auto;
+}
+
+@media(max-width: 900px){
+    #showTable {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 750px) {
+    #showScore {
+        width: 60rem;
+    }
+}
+
+@media(max-width: 650px){
+    html {
+        font-size: 9px;
+    }
+}
+
+@media(max-width: 560px) {
+    .secondContainer {
+        flex-direction: column;
+    }
 }

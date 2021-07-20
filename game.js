@@ -173,10 +173,11 @@ let paperAudio = new Audio("/audio/paper.mp3");
 let scissorsAudio = new Audio("/audio/scissors.mp3");
 let win = new Audio("/audio/win.mp3");
 let lose = new Audio("/audio/lose.mp3");
-let gameSound = new Audio("/audio/gameSound.mp3");
 let tie = new Audio("/audio/tie.mp3");
+let gameSound = new Audio("/audio/gameSound.mp3");
 
-gameSound.play();
+
+
 
 
 
