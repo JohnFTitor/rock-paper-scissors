@@ -1,0 +1,6 @@
+This scope is to credit some files I've used in this project.
+
+All the vectors paper.svg, rock.svg and scissors.svg were Created by Cristiano Zoucas
+from the Noun Project.
+
+All the sounds are from Zapsplat.com.

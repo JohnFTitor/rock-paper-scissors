@@ -58,11 +58,14 @@ function check() {
 
     if (rounds === 5){
         if (playerScore > computerScore) {
-            message.textContent = "Player won! Congrats"; 
+            message.textContent = "Player won! Congrats";
+            win.play(); 
         } else if (playerScore === computerScore) {
-            message.textContent = "It's a tie. What a shame";    
+            message.textContent = "It's a tie. What a shame";
+            tie.play();    
         } else {
             message.textContent = "Computer won. Good luck on next match!" ;
+            lose.play();
         }
         removeEventListeners();
         finish.style.display = "inline";
@@ -78,16 +81,19 @@ function game(playerSelection) {
 
 function playRock(){
     let playerSelection = "rock";
+    rockAudio.play();
     game(playerSelection);
 }
 
 function playPaper(){
     let playerSelection = "paper";
+    paperAudio.play();
     game(playerSelection);
 }
 
 function playScissors(){
     let playerSelection = "scissors";
+    scissorsAudio.play();
     game(playerSelection);
 }
 
@@ -109,6 +115,7 @@ function toggleView() {
     if (home.style.display === "" || home.style.display === "flex") {
         home.style.display= "none";
         gameMode.style.display = "flex";
+        gameSound.pause();
         rounds = 0;
         playerScore = 0;
         computerScore = 0;
@@ -127,6 +134,7 @@ function toggleView() {
         home.style.display = "flex";
         gameMode.style.display = "none";
         finish.style.display = "none";
+        gameSound.play();
     } 
 } 
 
@@ -158,6 +166,17 @@ const finish = document.getElementById("finish");
 
 //Creates eventListeners
 finish.addEventListener("click", toggleView);
+
+//Creates audio element for buttons
+let rockAudio = new Audio("/audio/rock.mp3");
+let paperAudio = new Audio("/audio/paper.mp3");
+let scissorsAudio = new Audio("/audio/scissors.mp3");
+let win = new Audio("/audio/win.mp3");
+let lose = new Audio("/audio/lose.mp3");
+let gameSound = new Audio("/audio/gameSound.mp3");
+let tie = new Audio("/audio/tie.mp3");
+
+gameSound.play();
 
 
 
