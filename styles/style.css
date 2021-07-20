@@ -115,3 +115,7 @@ button:hover {
     width: 80%;
     height: auto;
 }
+
+#finish {
+    display: none;
+}

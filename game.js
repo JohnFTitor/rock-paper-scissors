@@ -58,13 +58,14 @@ function check() {
 
     if (rounds === 5){
         if (playerScore > computerScore) {
-            alert("Player won! Score: " + playerScore);
+            message.textContent = "Player won! Congrats"; 
         } else if (playerScore === computerScore) {
-            alert("It's a tie. What a shame");    
+            message.textContent = "It's a tie. What a shame";    
         } else {
-            alert("Computer won. Score: " + computerScore);
+            message.textContent = "Computer won. Good luck on next match!" ;
         }
-        toggleView();  
+        removeEventListeners();
+        finish.style.display = "inline";
     }
 }
 
@@ -73,6 +74,33 @@ function game(playerSelection) {
     rounds++;
     roundsLabel.textContent = rounds;
     check();
+}
+
+function playRock(){
+    let playerSelection = "rock";
+    game(playerSelection);
+}
+
+function playPaper(){
+    let playerSelection = "paper";
+    game(playerSelection);
+}
+
+function playScissors(){
+    let playerSelection = "scissors";
+    game(playerSelection);
+}
+
+function createEventListeners() {
+    rock.addEventListener("click", playRock);
+    paper.addEventListener("click", playPaper);
+    scissors.addEventListener("click", playScissors);
+}
+
+function removeEventListeners(){
+    rock.removeEventListener("click", playRock);
+    paper.removeEventListener("click", playPaper);
+    scissors.removeEventListener("click", playScissors);  
 }
 
 
@@ -89,10 +117,16 @@ function toggleView() {
         player.textContent = "You: " + playerScore;
         machine.textContent = "Machine: " + computerScore;
         roundsLabel.textContent = rounds;
+        computerIcon.src = "";
+        message.textContent = "Waiting for results";
+        
+        createEventListeners();
+
 
     } else {
         home.style.display = "flex";
         gameMode.style.display = "none";
+        finish.style.display = "none";
     } 
 } 
 
@@ -103,7 +137,6 @@ let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 let winner;
-
 
 //Assign constants for the respected id
 const home = document.getElementById("home");
@@ -121,22 +154,10 @@ const computerIcon = document.getElementById("computerIcon");
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper"); 
 const scissors = document.getElementById("scissors");
+const finish = document.getElementById("finish");
 
 //Creates eventListeners
+finish.addEventListener("click", toggleView);
 
-rock.addEventListener("click", function(){
-    let playerSelection = "rock";
-    game(playerSelection);
-})
-paper.addEventListener("click", function(){
-    let playerSelection = "paper";
-    game(playerSelection);
-})
-scissors.addEventListener("click", function(){
-    let playerSelection = "scissors";
-    game(playerSelection);
-})
-
-  
 
 
