@@ -9,3 +9,5 @@ GameMode: Contains all the buttons to select rock, paper or scissors, also shows
 That's all for today.
 
 19/07/2021: Changed the script logic to work with buttons. I almost didn't get it to work, as addEventListener doesn't work within loops, which makes sense has they are created, not called. Solution was quite simple, I only needed to change the entire logic structure, making the eventListener to call the playround function, and checking if the rounds have finished. Finally, I changed the alerts for the textboxes and the text in the buttons for icons, also the computer selections are shown in the enemy's box. 
+
+21/07/2021: Rearranged the elements in the viewport and added sounds to the game, also included an html tag for mobile response, although some media queries are still needed to include them all.  
